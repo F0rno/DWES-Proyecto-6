@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Description extends Model
 {
     use HasFactory;
+    
+    protected $primaryKey = 'description_id';
 
     public function books()
     {

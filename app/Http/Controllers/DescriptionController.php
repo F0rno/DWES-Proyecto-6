@@ -11,4 +11,15 @@ class DescriptionController extends Controller
     {
         return Description::all();
     }
+
+    public function show($id)
+    {
+        $description = Description::find($id);
+
+        if (!$description) {
+            return response()->json(['error' => 'Description not found'], 404);
+        }
+
+        return $description;
+    }
 }
