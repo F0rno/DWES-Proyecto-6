@@ -23,20 +23,31 @@ class BookController extends Controller
         return $book;
     }
 
-    public function searchByTitle(Request $request)
+    public function search(Request $request)
     {
-        $searchTerm = $request->input('title');
+        $title = $request->input('title');
+        $type = $request->input('type');
+        $sort = $request->input('sort');
 
-        if (!$searchTerm) {
-            return response()->json(['error' => 'Search term not provided'], 400);
+        $query = Book::query();
+
+        if (!$title && !$type && !$sort) {
+            return response()->json(['error' => 'At least one parameter must be provided'], 400);
         }
 
-        $books = Book::where('title', 'REGEXP', $searchTerm)->get();
-        /*
-        if ($books->isEmpty()) {
-            return response()->json(['error' => 'No books found'], 404);
+        if ($title) {
+            $query->where('title', 'REGEXP', $title);
         }
-        */
+
+        if ($type) {
+            $query->where('type', 'REGEXP', $type);
+        }
+
+        if ($sort) {
+            $query->where('sort', 'REGEXP', $sort);
+        }
+
+        $books = $query->get();
         return $books;
     }
 }

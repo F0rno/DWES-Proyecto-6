@@ -22,7 +22,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 
 Route::get('/books', [BookController::class, 'index']);
-Route::get('/books/search', [BookController::class, 'searchByTitle']);
+Route::get('/books/search', [BookController::class, 'search']);
 
 Route::get('/descriptions', [DescriptionController::class, 'index']);
 Route::get('/descriptions/{id}', [DescriptionController::class, 'show']);
