@@ -4,12 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Description;
+use App\Http\Resources\DescriptionResource;
+use App\Http\Resources\DescriptionCollection;
+
 
 class DescriptionController extends Controller
 {
     public function index()
     {
-        return Description::all();
+        return new DescriptionCollection(Description::paginate());
     }
 
     public function show($id)
@@ -20,6 +23,6 @@ class DescriptionController extends Controller
             return response()->json(['error' => 'Description not found'], 404);
         }
 
-        return $description;
+        return new DescriptionResource($description);
     }
 }
