@@ -4,12 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Book;
+use App\Http\Resources\BookResource;
+use App\Http\Resources\BookCollection;
 
 class BookController extends Controller
 {
     public function index()
     {
-        return Book::all();
+        return new BookCollection(Book::paginate());
     }
 
     public function show($id)
@@ -20,7 +22,7 @@ class BookController extends Controller
             return response()->json(['error' => 'Book not found by id'], 404);
         }
 
-        return $book;
+        return new BookResource($book);
     }
 
     public function search(Request $request)
@@ -47,7 +49,8 @@ class BookController extends Controller
             $query->where('sort', 'REGEXP', $sort);
         }
 
-        $books = $query->get();
-        return $books;
+        $books = $query->paginate();
+     
+        return new BookCollection($books);
     }
 }
