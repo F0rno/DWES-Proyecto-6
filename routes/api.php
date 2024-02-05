@@ -26,3 +26,6 @@ Route::get('/books/search', [BookController::class, 'search']);
 
 Route::get('/descriptions', [DescriptionController::class, 'index']);
 Route::get('/descriptions/{id}', [DescriptionController::class, 'show']);
+
+Route::post('/user', [UserController::class, 'store']);
+Route::post('/login', [UserController::class, 'login']);
