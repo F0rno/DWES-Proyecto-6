@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->group(function () {
     Route::get('/books', [BookController::class, 'index']);
     Route::get('/books/search', [BookController::class, 'search']);
+    Route::get('/books/{id}', [BookController::class, 'show']);
     
     Route::get('/descriptions', [DescriptionController::class, 'index']);
     Route::get('/descriptions/{id}', [DescriptionController::class, 'show']);    

@@ -9,6 +9,8 @@ class Book extends Model
 {
     use HasFactory;
 
+    protected $primaryKey = 'book_id';
+
     public function description()
     {
         return $this->belongsTo(Description::class, 'description_description_id', 'description_id');
