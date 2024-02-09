@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->group(function () {
+Route::middleware('auth:api')->group(function () {
     Route::get('/books', [BookController::class, 'index']);
     Route::get('/books/search', [BookController::class, 'search']);
     
@@ -24,5 +24,5 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('/descriptions/{id}', [DescriptionController::class, 'show']);    
 });
 
-Route::post('/user', [UserController::class, 'store']);
-Route::post('/login', [UserController::class, 'login']);
+Route::post('/register', [AuthController::class, 'register']);
+Route::post('/login', [AuthController::class, 'login']);
