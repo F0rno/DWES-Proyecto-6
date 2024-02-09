@@ -60,3 +60,7 @@ services:
 networks:
     sail:
         driver: bridge
+
+# container_id=$(docker ps -qf "ancestor=mariadb:10")
+# docker exec -it $(docker ps -qf "ancestor=mariadb:10") bash -c "/docker-entrypoint-initdb.d/init.sh"
+# sail artisan migrate
