@@ -16,6 +16,17 @@ class User extends Authenticatable implements JWTSubject
     protected $primaryKey = 'user_id';
 
     /**
+     * The attributes that are mass assignable.
+     *
+     * @var array<int, string>
+     */
+    protected $fillable = [
+        'username',
+        'email',
+        'password'
+    ];
+
+    /**
      * Get the identifier that will be stored in the subject claim of the JWT.
      *
      * @return mixed
