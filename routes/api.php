@@ -28,6 +28,9 @@ Route::middleware('auth:api')->group(function () {
     Route::post('/comments', [CommentController::class, 'store']);
 
     Route::get('/reading-groups', [ReadingGroupController::class, 'index']);
+    Route::get('/reading-groups/{groupId}/users', [UsersHasReadingGroupsController::class, 'index']);
+    Route::post('/reading-groups/{groupId}/users/{userId}', [UsersHasReadingGroupsController::class, 'store']);
+    Route::delete('/reading-groups/{groupId}/users/{userId}', [UsersHasReadingGroupsController::class, 'destroy']);
 });
 
 Route::post('/register', [AuthController::class, 'register']);

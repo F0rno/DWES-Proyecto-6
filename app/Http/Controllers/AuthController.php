@@ -33,7 +33,8 @@ class AuthController extends Controller
             'access_token' => $token,
             'token_type' => 'bearer',
             'expires_in' => auth()->factory()->getTTL() * 3600,
-            'username' => auth()->user()->username
+            'username' => auth()->user()->username,
+            'id' => auth()->user()->user_id,
         ]);
     }
 
@@ -105,7 +106,8 @@ class AuthController extends Controller
         return response()->json([
             'access_token' => $token,
             'token_type' => 'bearer',
-            'expires_in' => auth()->factory()->getTTL() * 3600
+            'expires_in' => auth()->factory()->getTTL() * 3600,
+            'id' => auth()->user()->user_id,
         ]);
     }
 }
