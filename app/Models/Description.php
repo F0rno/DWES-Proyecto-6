@@ -9,6 +9,7 @@ class Description extends Model
 {
     use HasFactory;
     
+    protected $keyType = 'string';
     protected $primaryKey = 'description_id';
 
     public function books()
