@@ -26,6 +26,11 @@ class User extends Authenticatable implements JWTSubject
         'password'
     ];
 
+    public function readingGroups()
+    {
+        return $this->belongsToMany(ReadingGroup::class);
+    }
+
     /**
      * Get the identifier that will be stored in the subject claim of the JWT.
      *
