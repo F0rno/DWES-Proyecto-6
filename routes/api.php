@@ -25,6 +25,7 @@ Route::middleware('auth:api')->group(function () {
     Route::get('/descriptions/{id}', [DescriptionController::class, 'show']);
     
     Route::get('/comments/search', [CommentController::class, 'search']);
+    Route::post('/comments', [CommentController::class, 'store']);
 });
 
 Route::post('/register', [AuthController::class, 'register']);

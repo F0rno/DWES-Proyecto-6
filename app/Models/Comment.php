@@ -11,6 +11,12 @@ class Comment extends Model
 
     protected $primaryKey = 'comment_id';
 
+    protected $fillable = [
+        'username',
+        'msg',
+        'books_book_id',
+    ];
+
     public function book()
     {
         return $this->belongsTo(Book::class, 'books_book_id', 'book_id');
