@@ -11,7 +11,7 @@ class BookController extends Controller
 {
     public function index()
     {
-        return new BookCollection(Book::paginate());
+        return new BookCollection(Book::paginate(14));
     }
 
     public function show($id)
@@ -49,7 +49,7 @@ class BookController extends Controller
             $query->where('sort', 'REGEXP', $sort);
         }
 
-        $books = $query->paginate();
+        $books = $query->paginate(14);
      
         return new BookCollection($books);
     }
