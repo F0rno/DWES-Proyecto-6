@@ -9,12 +9,18 @@ use App\Http\Resources\CommentCollection;
 class CommentController extends Controller
 {
     public function store(Request $request) {
+
         $validatedData = $request->validate([
             'username' => 'required|max:16',
             'msg' => 'required',
             'books_book_id' => 'required|exists:books,book_id',
         ]);
-    
+
+        // Check if the user is the same as the username in the request
+        if (auth()->user()->username !== $validatedData['username']) {
+            return response()->json(['error' => 'Forbidden'], 403);
+        }
+
         $comment = Comment::create([
             'username' => $validatedData['username'],
             'msg' => $validatedData['msg'],
