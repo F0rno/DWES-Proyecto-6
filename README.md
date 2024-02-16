@@ -34,7 +34,7 @@ composer install --ignore-platform-reqs
 ./vendor/bin/sail up
 ```
 
-Lo más seguro es que el contenedor de la base de datos se baje solo, levantalo de nuebo con el comando, con la interfaz de de tu editor o con un comando
+Lo más seguro es que el contenedor de la base de datos se baje solo, levántalo de nuevo con el comando, con la interfaz de tu editor o con un comando
 
 Carga los datos en la base de datos
 
@@ -42,7 +42,7 @@ Carga los datos en la base de datos
 docker exec -it $(docker ps -qf "ancestor=mariadb:10") bash -c "/docker-entrypoint-initdb.d/init.sh"
 ```
 
-Generamos los secretos
+Y por último generamos los secretos
 
 ```bash
 ./vendor/bin/sail artisan key:generate
