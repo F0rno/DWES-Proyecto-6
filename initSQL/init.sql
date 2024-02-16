@@ -295,6 +295,6 @@ VALUES
 ( 'xsWdgS6eFsYC', 'The Lion, the Witch and the Wardrobe', 'https://books.google.com/books/content?id=xsWdgS6eFsYC&printsec=frontcover&img=1&zoom=3&edge=curl&imgtk=AFLRE71oEtNARy2REoT07PgVgkPevECoRnSnHQrg_01mvffGl-PzC2TBKbaHaY8a185dFIk-Fe74-DuCglfHodTu6mKQHzmHacD7SUH8mLFE7jbzjaPLIHsZUL27LEd1AVgHqzdQzI8n&source=gbs_api', 'xsWdgS6eFsYC', 'M', 'N');
 INSERT INTO books_api.reading_groups (name) 
 VALUES
-('Horror'),
-('Science Fiction'),
-('Love');
+('HORROR'),
+('SCIENCE FICTION'),
+('LOVE');
