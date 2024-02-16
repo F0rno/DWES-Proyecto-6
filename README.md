@@ -34,7 +34,7 @@ composer install --ignore-platform-reqs
 ./vendor/bin/sail up
 ```
 
-Lo más seguro es que el contenedor de la base de datos se baje solo, levántalo de nuevo con el comando, con la interfaz de tu editor o con un comando
+Lo más seguro es que el contenedor de la base de datos se baje solo, levántalo de nuevo, ya sea con la interfaz de tu editor o con un comando
 
 Carga los datos en la base de datos
 
