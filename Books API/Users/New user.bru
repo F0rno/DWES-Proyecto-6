@@ -1,0 +1,17 @@
+meta {
+  name: New user
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://localhost/api/register
+  body: multipartForm
+  auth: bearer
+}
+
+body:multipart-form {
+  username: pablo
+  email: pa@gmail.com
+  password: 1234
+}

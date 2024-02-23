@@ -1,0 +1,15 @@
+meta {
+  name: Search by id
+  type: http
+  seq: 3
+}
+
+get {
+  url: http://localhost/api/books/01EZAwAAQBAJ
+  body: multipartForm
+  auth: none
+}
+
+auth:bearer {
+  token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L2FwaS9sb2dpbiIsImlhdCI6MTcwNzczMjc0NCwiZXhwIjoxNzA3NzM2MzQ0LCJuYmYiOjE3MDc3MzI3NDQsImp0aSI6IlY4aXhEaWgwTHFRVGxGbFIiLCJzdWIiOiIyIiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.z01blW5xOfpgf_7cLKDMThH-Zse1f-9m6kKERlJnS6A
+}

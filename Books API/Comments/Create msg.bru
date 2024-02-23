@@ -1,0 +1,27 @@
+meta {
+  name: Create msg
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://localhost/api/comments
+  body: multipartForm
+  auth: none
+}
+
+auth:bearer {
+  token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L2FwaS9yZWdpc3RlciIsImlhdCI6MTcwNzczNzA4NCwiZXhwIjoxNzA3NzQwNjg0LCJuYmYiOjE3MDc3MzcwODQsImp0aSI6Ikl3SDFtMkQ2MUdkY05yT3giLCJzdWIiOiIxIiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.pWUJJSAxNqvisUkMMh92ARds4QDqR3f7PisAvc5AxZg
+}
+
+body:json {
+  {
+    "book_id":"-2t0CgAAQBAJ"
+  }
+}
+
+body:multipart-form {
+  username: Juanjo
+  msg: Un comentario de verdad hombre,, un poco más largo
+  books_book_id: 7f5iAAAAcAAJ
+}

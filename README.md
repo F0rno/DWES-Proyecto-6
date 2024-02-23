@@ -51,3 +51,19 @@ Y por último generamos los secretos
 ```bash
 ./vendor/bin/sail artisan jwt:secret
 ```
+
+### Tests de los endpoints
+
+```bash
+snap install bruno
+```
+
+Dentro de bruno, le damos a "Open collection" y seleccionamos la carpeta `Books API`.
+
+Para auntenticarte utiliza los endpoints: "New user" y "login".
+
+Vas a los Setting de la colección y pones el token en la pestaña Auth. Para tener permisos en todas las llamadas.
+
+```
+snap remove bruno
+```

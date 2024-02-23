@@ -1,0 +1,23 @@
+meta {
+  name: Login
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://localhost/api/login
+  body: json
+  auth: bearer
+}
+
+body:json {
+  {
+      "email": "pa@gmail.com",
+      "password": "1234"
+  }
+}
+
+body:multipart-form {
+  email: hola@gmail.com
+  password: 1234
+}

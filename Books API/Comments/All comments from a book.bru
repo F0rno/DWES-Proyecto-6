@@ -1,0 +1,29 @@
+meta {
+  name: All comments from a book
+  type: http
+  seq: 2
+}
+
+get {
+  url: http://localhost/api/comments/search?book_id=01EZAwAAQBAJ
+  body: none
+  auth: none
+}
+
+query {
+  book_id: 01EZAwAAQBAJ
+}
+
+auth:bearer {
+  token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L2FwaS9yZWdpc3RlciIsImlhdCI6MTcwNzczNzA4NCwiZXhwIjoxNzA3NzQwNjg0LCJuYmYiOjE3MDc3MzcwODQsImp0aSI6Ikl3SDFtMkQ2MUdkY05yT3giLCJzdWIiOiIxIiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.pWUJJSAxNqvisUkMMh92ARds4QDqR3f7PisAvc5AxZg
+}
+
+body:json {
+  {
+    "book_id":""
+  }
+}
+
+body:multipart-form {
+  book_id: asdfasdf
+}
