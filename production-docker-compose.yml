@@ -1,0 +1,42 @@
+version: '3'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+  db:
+    image: 'mariadb:10'
+    ports:
+        - '${FORWARD_DB_PORT:-3306}:3306'
+    environment:
+        MYSQL_ROOT_PASSWORD: '${DB_PASSWORD}'
+        MYSQL_ROOT_HOST: '%'
+        MYSQL_DATABASE: '${DB_DATABASE}'
+        MYSQL_USER: '${DB_USERNAME}'
+        MYSQL_PASSWORD: '${DB_PASSWORD}'
+        MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+    volumes:
+        - ./initSQL:/docker-entrypoint-initdb.d
+    healthcheck:
+        test:
+            - CMD
+            - mysqladmin
+            - ping
+            - '-p${DB_PASSWORD}'
+        retries: 3
+        timeout: 5s
+    env_file:
+      - .env
+  nginx:
+    image: "nginx:1.19"
+    ports:
+      - "80:80"
+    depends_on:
+      - app
