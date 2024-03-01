@@ -58,4 +58,6 @@ Se lanzara en el puerto 80, [http://localhost](http://localhost)
 
 ### Tests de los endpoints
 
-Los tests entan en la carpeta `endpoints-tests`
+Los tests entan en la carpeta `endpoints-tests`.
+
+Para poder autorizarte en los test, tienes que hacer una llamada al endpoint register y crear un usuario. Ya hay un ejemplo creado.
