@@ -54,6 +54,8 @@ Y por último generamos los secretos
 ./vendor/bin/sail artisan jwt:secret
 ```
 
+Se lanzara en el puerto 80, [http://localhost](http://localhost)
+
 ### Tests de los endpoints
 
 Los tests entan en la carpeta `endpoints-tests`
